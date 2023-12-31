@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    background: transparent;
+    /* filter: blur(400px); */
+      transition: all 0.5s;
+      z-index: 997;
+      padding: 0px 0;
+      backdrop-filter: blur(6px);
+  }
+  
+  #header .logo img {
+      max-height: 40px;
+  }
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar .navbar-expand-lg {
+    /* position: absolute; */
+    background-color: #ffcc66;
+}  
+
+ul.nav.navbar-nav.navbar-right {
+    margin-left: auto;
+}
+
+ul.nav.navbar-nav.navbar-right li {
+    padding: 0px 15px;
+}
+
+@media (max-width: 320px) {
+    .navbar a.navbar-brand img {
+        width:80px;
+    }
+}
+
+@media (min-width: 321px ) and (max-width: 375px) {
+    .navbar a.navbar-brand img {
+        width:100px;
+    }
+}
+
+@media (min-width: 376px ) and (max-width: 425px) {
+    .navbar a.navbar-brand img {
+        width:120px;
+    }
+}
