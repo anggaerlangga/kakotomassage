@@ -14,6 +14,7 @@
   <script src="<?php echo base_url('assets/js/main.js') ?>"></script>
   <script src="<?php echo base_url('assets/js/script.js') ?>"></script>
   <script src="<?php echo base_url('assets/js/smoothscroller.js') ?>"></script>
+  <script src="<?= base_url('assets/js/sweetalert.js') ?>"></script>
 
 
 <div class="footer-top">
@@ -22,13 +23,13 @@
         <div class="col-sm-4 col-md-4">
           <div class="about-foot">
             <div class="title">
-              <h4>TENTANG KAMI</h4>
+              <h4>ABOUT US</h4>
             </div>
             <div class="logo">
-              <img src="<?php echo base_url('assets/img/logo-footer.png')?>">
+              <img src="<?php echo base_url('assets/img/kakoto.png')?>">
             </div>
             <div class="desc">
-              <h4>PT Mantiko Group Indonesia</h4>
+              <h4>Kakoto Massage</h4>
               <p>adalah salah satu holding company yang didirikan oleh Fedri Ramadhani, SST, M.Par sejak tahun 2020.
                 Mantiko Group Indonesia memayungi beberapa unit usaha yang bergerah di bidang Travel Agent, Event Organizer, Restoran, Catering,
                 Sentra Refleksi dan Massage, Dekorasi Wedding, Penyewaan Videotron dan Sekolah Seni.
@@ -53,16 +54,16 @@
         <div class="col-sm-4 col-d=md-4">
           <div class="service-foot">
             <div class="title">
-              <h4>PRODUK</h4>
+              <h4>SERVICE</h4>
             </div>
             <div class="desc">
               <ul>
-                <li><a href="<?php echo base_url('/collection/product/STEEL') ?>">Mantiko Travel & Mice</a></li>
-                <li><a href="<?php echo base_url('/collection/product/CNP') ?>">Kakoto Refleksi</a></li>
-                <li><a href="<?php echo base_url('/collection/product/UNP') ?>">MGI Academy</a></li>
-                <li><a href="<?php echo base_url('/collection/product/WF') ?>">Vidtron Multimedia</a></li>
-                <li><a href="<?php echo base_url('/collection/product/HBEAM') ?>">UF Enterprise WO</a></li>
-                <li><a href="<?php echo base_url('/collection/product/HOLLOW') ?>">D'Kapau Nusantara Resto</a></li>
+                <li><a href="#">Bekam</a></li>
+                <li><a href="#">KOP / Kerik</a></li>
+                <li><a href="#">Full Body Massage</a></li>
+                <li><a href="#">Lulur</a></li>
+                <li><a href="#">Refleksi</a></li>
+                <li><a href="#">Thai Massage</a></li>
               </ul>
             </div>
           </div>
@@ -76,7 +77,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="copyright">
-          &copy;2023 <span>PT Mantiko Group Indonesia</span>. All Rights Reserved
+          &copy;2024 <span>Kakoto Massage</span>. All Rights Reserved
         </div>
       </div>
     </div>

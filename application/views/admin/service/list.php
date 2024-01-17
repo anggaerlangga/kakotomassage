@@ -22,38 +22,40 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                <h1 class="h3 mb-2 text-gray-800">Section Gallery</h1>
+                <h1 class="h3 mb-2 text-gray-800">Section service</h1>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header">
-                        <a href="<?php echo site_url('admin/gallery/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+                        <a href="<?php echo site_url('admin/service/add') ?>"><i class="fas fa-plus"></i> Add New</a>
                     </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Gallery ID</th>
+                                            <th>Service Name</th>
+                                            <th>Harga</th>
                                             <th>Description</th>
                                             <th>Image</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($gallery as $gallery): ?>
+                                        <?php foreach ($service as $service): ?>
                                         <tr>
-                                            <td><?php echo $gallery->gallery_id ?></td>
-                                            <td><?php echo $gallery->description ?></td>
+                                            <td><?php echo $service->service_name ?></td>
+                                            <td><?php echo $service->harga ?></td>
+                                            <td><?php echo $service->description ?></td>
                                             <td>
-											    <img src="<?php echo base_url('upload/gallery/'.$gallery->image) ?>" width="64" />
+											    <img src="<?php echo base_url('upload/service/'.$service->image) ?>" width="64" />
 										    </td>
                                             <td>
-                                                <a href="<?php echo site_url('admin/gallery/edit/'.$gallery->gallery_id) ?>"
+                                                <a href="<?php echo site_url('admin/service/edit/'.$service->service_id) ?>"
                                                 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                 <!-- <a href="<?php echo site_url('admin/pages/edit/'.$pages->page_id) ?>"
                                                 class="btn btn-small"><i class="fas fa-search"></i> View</a> -->
-                                                <a onclick="deleteConfirm('<?php echo site_url('admin/gallery/delete/'.$gallery->gallery_id) ?>')"
+                                                <a onclick="deleteConfirm('<?php echo site_url('admin/service/delete/'.$service->service_id) ?>')"
                                                 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Delete</a>
 										    </td>
                                         </tr>

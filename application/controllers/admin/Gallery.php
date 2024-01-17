@@ -21,6 +21,39 @@ class Gallery extends CI_Controller
         $this->load->view("admin/gallery/list", $data);
     }
 
+    public function add()
+    {
+        $gallery = $this->gallery_model;
+        $validation = $this->form_validation; // objek form validation
+        $validation->set_rules($gallery->rules()); // terapkan rules
+
+        if($validation->run()) { // melakukan validasi
+           $gallery->save(); // simpan data ke database
+           $this->session->set_flashdata('success', 'Berhasil disimpan'); // tampilkan pesan berhasil
+        }
+
+        $this->load->view("admin/gallery/new"); // tampilkan form add
+    }
+
+    public function edit($id = null) // id data yang akan diedit
+    {
+        if (!isset($id)) redirect('admin/gallery'); // kita lakukan redirect ke route ini kalau $id bernilai null
+
+        $gallery = $this->gallery_model; // objek model
+        $validation = $this->form_validation; // objek validation
+        $validation->set_rules($gallery->rules()); // menerapkan rules
+
+        if($validation->run()) { // melakukan validasi
+            $gallery->update(); // menyimpan data
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["gallery"] = $gallery->getById($id); // mengambil data untuk ditampilkan pada form
+        if(!$data["gallery"]) show_404(); // jika tidak ada data, tampilkan error 404
+
+        $this->load->view("admin/gallery/edit", $data); // menampilkan form edit
+    }
+
     function create()
 	{
 		$this->load->view("admin/gallery/new_form");

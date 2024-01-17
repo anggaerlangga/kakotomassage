@@ -7,9 +7,7 @@ class pages_model extends CI_Model
 
     // nama kolom di tabel
     public $page_id;
-    public $product_id;
     public $subpage;
-    public $lang;
     public $title;
     public $subtitle;
     public $description;
@@ -25,14 +23,8 @@ class pages_model extends CI_Model
             'label' => 'page',
             'rules' => 'required'],
 
-            ['field' => 'product_id',
-            'label' => 'product_id'],
-
             ['field' => 'subpage',
             'label' => 'subpage'],
-
-            ['field' => 'lang',
-            'label' => 'lang'],
 
             ['field' => 'title',
             'label' => 'title'],
@@ -64,174 +56,17 @@ class pages_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    public function getAllMantiko() {
+    public function getAbout() {
        $product_id = '001';
        $query = $this->db->get_where('ct_page', array('product_id' => $product_id));
        return $query->result();
     }
 
-    public function getAllVidtron() {
+    public function getProduct() {
         $product_id = '002';
         $query = $this->db->get_where('ct_page', array('product_id' => $product_id));
         return $query->result();
     }
-
-    public function getAllMgi() {
-        $product_id = '003';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id));
-        return $query->result();
-    }
-
-    public function getAllUf() {
-        $product_id = '004';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id));
-        return $query->result();
-    }
-
-    public function getAllKakoto() {
-        $product_id = '005';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id));
-        return $query->result();
-    }
-
-    public function getAllKapau() {
-        $product_id = '006';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id));
-        return $query->result();
-    }
-
-    public function getAboutMantiko() {
-        $product_id = '001';
-        $subpage = 'ABT';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getProductMantiko() {
-        $product_id = '001';
-        $subpage = 'PRD';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getTimMantiko() {
-        $product_id = '001';
-        $subpage = 'TIM';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getAboutVidtron() {
-        $product_id = '002';
-        $subpage = 'ABT';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getProductVidtron() {
-        $product_id = '002';
-        $subpage = 'PRD';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getTimVidtron() {
-        $product_id = '002';
-        $subpage = 'TIM';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getAboutMgi() {
-        $product_id = '003';
-        $subpage = 'ABT';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getProductMgi() {
-        $product_id = '003';
-        $subpage = 'PRD';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getTimMgi() {
-        $product_id = '003';
-        $subpage = 'TIM';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getAboutUf() {
-        $product_id = '004';
-        $subpage = 'ABT';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getProductUf() {
-        $product_id = '004';
-        $subpage = 'PRD';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getTimUf() {
-        $product_id = '004';
-        $subpage = 'TIM';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getAboutKakoto() {
-        $product_id = '005';
-        $subpage = 'ABT';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getProductKakoto() {
-        $product_id = '005';
-        $subpage = 'PRD';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getPriceKakoto() {
-        $product_id = '005';
-        $subpage = 'PRC';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getTimKakoto() {
-        $product_id = '005';
-        $subpage = 'TIM';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getAboutKapau() {
-        $product_id = '006';
-        $subpage = 'ABT';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getProductKapau() {
-        $product_id = '006';
-        $subpage = 'PRD';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
-
-     public function getTimKapau() {
-        $product_id = '006';
-        $subpage = 'TIM';
-        $query = $this->db->get_where('ct_page', array('product_id' => $product_id, 'subpage' => $subpage));
-        return $query->result();
-     }
 
 
     //  public function getPriceKakoto() {
@@ -252,13 +87,29 @@ class pages_model extends CI_Model
         return $this->db->get_where($this->_table, ["page_id" => $id])->row();
     }
 
+    public function getAboutBySubPage()
+    {
+        $subpage = "ABT";
+        return $this->db->get_where($this->_table, ["subpage" => $subpage])->row();
+    }
+
+    public function getServiceBySubPage()
+    {
+        $subpage = "SVC";
+        return $this->db->get_where($this->_table, ["subpage" => $subpage])->row();
+    }
+
+    public function getTestimoniBySubPage()
+    {
+        $subpage = "TES";
+        return $this->db->get_where($this->_table, ["subpage" => $subpage])->row();
+    }
+
     public function save() 
     {
         $post = $this->input->post(); // ambil data dari form
         $this->page_id = uniqid();
-        $this->product_id = $post["product_id"];
         $this->subpage = $post["subpage"];
-        $this->lang = $post["lang"];
         $this->title = $post["title"];
         $this->subtitle = $post["subtitle"];
         $this->description = $post["description"];
@@ -274,9 +125,7 @@ class pages_model extends CI_Model
     {
         $post = $this->input->post();
         $this->page_id = $post["page_id"];
-        $this->product_id = $post["product_id"];
         $this->subpage = $post["subpage"];
-        $this->lang = $post["lang"];
         $this->title = $post["title"];
         $this->subtitle = $post["subtitle"];
         $this->description = $post["description"]; 

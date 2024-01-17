@@ -7,13 +7,13 @@ class gallery_model extends CI_Model
 
     // nama kolom di tabel
     public $gallery_id;
-    public $product_id;
-    public $photo;
+    public $description;
+    public $image;
 
     public function rules() {
         return [
-            ['field' => 'product_id',
-            'label' => 'Product ID',
+            ['field' => 'gallery_id',
+            'label' => 'gallery id',
             'rules' => 'required']
         ];
     }
@@ -31,65 +31,49 @@ class gallery_model extends CI_Model
         // method ini akan mengembalikan sebuah objek
     }
 
-    public function getGalleryMantiko()
+    public function save() 
     {
-        $product_id = "001";
-        // return $this->db->get_where($this->_table, ["page_id" => $page_id])->row();
-        $this->db->select('*');
-        $query = $this->db->get_where($this->_table, array('product_id'=>$product_id));
-        // print_r($query);
-        return $query->result();
+        $post = $this->input->post(); // ambil data dari form
+        $this->gallery_id = uniqid(); // membuat id unik
+        $this->description = $post["description"];
+        $this->image = $this->_uploadImage();
+        return $this->db->insert($this->_table, $this); // simpan ke database
     }
 
-    public function getGalleryVidtron()
+    private function _uploadImage()
     {
-        $product_id = "002";
-        // return $this->db->get_where($this->_table, ["page_id" => $page_id])->row();
-        $this->db->select('*');
-        $query = $this->db->get_where($this->_table, array('product_id'=>$product_id));
-        // print_r($query);
-        return $query->result();
+        $config['upload_path']          = './upload/gallery';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->gallery_id;
+        $config['overwrite']			= true;
+        $config['max_size']             = 5024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('image')) {
+            return $this->upload->data("file_name");
+        }
+
+        print_r($this->upload->display_errors());
+        
+       // return "default.jpg";
     }
 
-    public function getGalleryMgi()
+    public function update()
     {
-        $product_id = "003";
-        // return $this->db->get_where($this->_table, ["page_id" => $page_id])->row();
-        $this->db->select('*');
-        $query = $this->db->get_where($this->_table, array('product_id'=>$product_id));
-        // print_r($query);
-        return $query->result();
-    }
+        $post = $this->input->post();
+        $this->gallery_id = $post["gallery_id"];
+        $this->description = $post["description"];
+        
+        if (!empty($_FILES["image"]["name"])) {
+            $this->image = $this->_uploadImage();
+        } else {
+            $this->image = $post["old_image"];
+        }
 
-    public function getGalleryUf()
-    {
-        $product_id = "004";
-        // return $this->db->get_where($this->_table, ["page_id" => $page_id])->row();
-        $this->db->select('*');
-        $query = $this->db->get_where($this->_table, array('product_id'=>$product_id));
-        // print_r($query);
-        return $query->result();
-    }
-
-    public function getGalleryKakoto()
-    {
-        $product_id = "005";
-        // return $this->db->get_where($this->_table, ["page_id" => $page_id])->row();
-        $this->db->select('*');
-        $query = $this->db->get_where($this->_table, array('product_id'=>$product_id));
-        // print_r($query);
-        return $query->result();
-    }
-
-
-    public function getGalleryKapau()
-    {
-        $product_id = "006";
-        // return $this->db->get_where($this->_table, ["page_id" => $page_id])->row();
-        $this->db->select('*');
-        $query = $this->db->get_where($this->_table, array('product_id'=>$product_id));
-        // print_r($query);
-        return $query->result();
+        return $this->db->update($this->_table, $this, array('gallery_id' => $post['gallery_id']));
     }
 
     public function delete($id)

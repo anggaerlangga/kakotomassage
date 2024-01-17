@@ -26,7 +26,7 @@
 
                     <!-- Content Row -->
                     <div class="row">
-                        <h1>Welcome to Mantiko Web Admin</h1>    
+                        <h1>Welcome to Kakoto Massage Web Admin</h1>    
                     </div>
                 </div>
                 <!-- /.container-fluid -->

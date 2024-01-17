@@ -3,17 +3,17 @@
         <div class="row justify-content-center">
             <div class="col-sm-7" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <div class="title">
-                    <h1 style="color:#6cbc99;">What is</h1>
-                    <h1>Kakoto Reflexology ?</h1>
+                    <h1 style="color:#6cbc99;"><?php echo $about->title ?></h1>
+                    <h1><?php echo $about->subtitle ?></h1>
                     <hr>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.</p>
+                <p><?php echo $about->description ?></p>
                 <!-- <div class="btn-group">
                     <a href="/about" class="btn btn-primary">Read More</a>
                 </div> -->
             </div>
             <div class="col-sm-5" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-                <img src="<?php echo base_url('assets/img/img-about.png') ?>" class="img-responsive" />
+                <img src="<?php echo base_url('upload/homepage/'.$about->image) ?>" class="img-responsive" />
             </div>
         </div>
         <div class="row" style="float:right;">
@@ -36,72 +36,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="<?php echo site_url('assets/img/bekam_2.png') ?>" alt="" class="img-responsive">
-                        <div class="card-title">
-                            <h3>Bekam</h3>
-                            <p>Rp. 135.000</p>
+            <?php
+                foreach ($service as $service): ?>
+                    <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="<?php echo base_url('upload/images/'.$service->image) ?>" alt="" class="img-responsive">
+                                <div class="card-title">
+                                    <h3><?php echo $service->service_name ?></h3>
+                                </div>
+                                <div class="price">
+                                    <p><?php echo $service->harga ?></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="<?php echo site_url('assets/img/kerik_2.png') ?>" alt="" class="img-responsive">
-                        <div class="card-title">
-                            <h3>KOP / Kerik</h3>
-                            <p>Rp. 85.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="<?php echo site_url('assets/img/full_body_massage.png') ?>" alt="" class="img-responsive">
-                        <div class="card-title">
-                            <h3>Full Body Massage</h3>
-                            <p>Rp. 120.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="<?php echo site_url('assets/img/lulur_2.png') ?>" alt="" class="img-responsive">
-                        <div class="card-title">
-                            <h3>Lulur</h3>
-                            <p>Rp. 115.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="<?php echo site_url('assets/img/refleksi_2.png') ?>" alt="" class="img-responsive">
-                        <div class="card-title">
-                            <h3>Refleksi</h3>
-                            <p>Rp. 145.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="<?php echo site_url('assets/img/thai_massage2.png') ?>" alt="" class="img-responsive">
-                        <div class="card-title">
-                            <h3>Thai Massage</h3>
-                            <p>Rp. 200.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section> 
@@ -116,27 +66,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="thumbnail-img">
-                    <a href="#">
-                        <img class="img-responsive" src="<?php echo site_url('assets/img/promo2.jpg') ?>">
-                    </a>
+            <?php
+                foreach ($promo as $promo): ?>
+                <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="thumbnail-img">
+                        <a href="#">
+                            <img class="img-responsive" src="<?php echo base_url('upload/promo/'.$promo->image) ?>">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="thumbnail-img">
-                    <a href="#">
-                        <img class="img-responsive" src="<?php echo site_url('assets/img/promo1.jpg') ?>">
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="thumbnail-img">
-                    <a href="#">
-                        <img class="img-responsive" src="<?php echo site_url('assets/img/promo3.jpg') ?>">
-                    </a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -150,69 +89,65 @@
                 <hr>
             </div>
         </div>
-        <div class="row justify-content-center">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="date">Date :</label>
-                                <input type="date" class="form-control" name="date" id="date">
+        <div class="col-sm-8">
+            <div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <div class="card-body"> 
+                    <form enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="date">Date :</label>
+                                    <input type="date" class="form-control" name="schedule_date" id="schedule_date">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="time">Time :</label>
+                                    <input type="text" class="form-control" name="time" id="time">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="time">Time :</label>
-                                <input type="text" class="form-control" name="time" id="time">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="name">Name :</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="phone">Mobile Phone :</label>
+                                    <input type="text" class="form-control" name="mobile_phone" id="mobile_phone">
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="name">Name :</label>
-                                <input type="text" class="form-control" name="name" id="name">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="treatment">Treatment :</label>
+                                    <input type="text" class="form-control" name="treatment" id="treatment">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Therapist :</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="male" id="male" value="male">
+                                    <label for="male">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="female" id="female" value="female">
+                                    <label for="female">Female</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="phone">Mobile Phone :</label>
-                                <input type="text" class="form-control" name="phone" id="phone">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="treatment">Treatment :</label>
-                                <input type="text" class="form-control" name="treatment" id="treatment">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <label>Therapist :</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="male" id="male">
-                                <label for="male">Male</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="female" id="female">
-                                <label for="female">Female</label>
-                            </div>
-                        </div>
-                        <div class="button-group">
-                            <button class="btn btn-outline-primary" type="submit">Submit</button>
-                        </div>
-            <!-- <div class="card">
-                <div class="card-body">
-                    <form action="#" method="post">
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label for="date">Date :</label>
-                                <input type="date" class="form-control" name="date" id="date">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label for="time">Time :</label>
-                                <input type="text" class="form-control" name="time" id="time">
+                        <div class="row justify-content-center">
+                            <div class="button-group">
+                                <button class="btn btn-outline-primary" type="submit" id="btn_save">Submit</button>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>
@@ -227,27 +162,16 @@
             </div>
         </div>
         <div class="row">
+            <?php
+                foreach ($gallery as $gallery): ?>
             <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                 <div class="thumbnail-img">
                     <a href="#">
-                        <img class="img-responsive" src="<?php echo site_url('assets/img/promo2.jpg') ?>">
+                        <img class="img-responsive" src="<?php echo base_url('upload/gallery/'.$gallery->image) ?>">
                     </a>
                 </div>
             </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="thumbnail-img">
-                    <a href="#">
-                        <img class="img-responsive" src="<?php echo site_url('assets/img/promo1.jpg') ?>">
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <div class="thumbnail-img">
-                    <a href="#">
-                        <img class="img-responsive" src="<?php echo site_url('assets/img/promo3.jpg') ?>">
-                    </a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -261,30 +185,69 @@
                 <hr>
             </div>
         </div>
-    </div>
-<section>
+        <div class="row justify-content-center">
+            <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
+                <div class="carousel-inner">
+                
+                    <?php
+                        foreach ($testimoni as $testimoni): ?>
+                            <div class="carousel-item active">
+                                <img class="rounded-circle shadow-1-strong mb-4" src="<?php echo base_url('upload/homepage/'.$testimoni->image) ?>">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-8">
+                                        <h5 class="mb-3"><?php echo $testimoni->title ?></h5>
+                                        <p class="text-muted"><?php echo $testimoni->description ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php endforeach; ?>    
 
-<!-- <section class="contact" id="contact">
-    <div class="row">
-        <div class="col-sm-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-            <div class="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.8419656233075!2d106.82804046601122!3d-6.16613446933582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cd868e1a25%3A0x19ba387a159483fb!2sMantiko%20Travel!5e0!3m2!1sid!2sid!4v1682043794207!5m2!1sid!2sid" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        <div class="col-sm-4" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
-            <div class="contact">
-                <ul>
-                    <li><img src="<?php echo base_url('assets/img/telephone.png')?>">+62 812-3503-8508</li>
-                    <li><img src="<?php echo base_url('assets/img/whatsapp.png')?>">0812-3503-8508</li>
-                    <li><img src="<?php echo base_url('assets/img/instagram.png')?>">mantikotravel.mice</li> 
-                    <li><img src="<?php echo base_url('assets/img/place.png')?>">Jl. Ir. H. Juanda 2, gg.kingkit 2 No.2 RT 012 / 004, Kel. kebon kelapa kec. Gambir - Jakarta Pusat</li>
-                </ul>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> 
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
     </div>
-</section> -->
+</section>
+
+<section class="secnine">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                <h1>Contact us</h1>
+                <h4>You can find out location in the following information</h4>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
+                <div class="maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.8419656233075!2d106.82804046601122!3d-6.16613446933582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cd868e1a25%3A0x19ba387a159483fb!2sMantiko%20Travel!5e0!3m2!1sid!2sid!4v1682043794207!5m2!1sid!2sid" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-sm-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
+                <div class="contact">
+                    <ul>
+                        <li><img src="<?php echo base_url('assets/img/place.png')?>">Jl. Ir. H. Juanda 2, gg.kingkit 2 No.2 RT 012 / 004, Kel. kebon kelapa kec. Gambir - Jakarta Pusat</li>
+                        <li><img src="<?php echo base_url('assets/img/whatsapp.png')?>">0812-3503-8508</li>
+                        <li><img src="<?php echo base_url('assets/img/instagram.png')?>">mantikotravel.mice</li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php $this->load->view("public/sukses.php") ?>
 
 </body>
+
 
 <script>
     function openCity(evt, cityName) {
@@ -308,16 +271,44 @@
     evt.currentTarget.className += " active";
     }
 
+
     $(document).ready(function(){
-        $('#vidtron').hide();
-        $('#galery_product').change(function(){
-            if($('#galery_product').val() == 1) {
-                $('#mantiko').fadeIn();
-                $('#vidtron').hide();
-            } else if($('#galery_product').val() == 2) {
-                $('#vidtron').fadeIn();
-                $('#mantiko').hide();
+        $('#btn_save').on('click',function(){
+            var schedule_date = $('#schedule_date').val();
+            var time = $('#time').val();
+            var name = $('#name').val();
+            var mobile_phone = $('#mobile_phone').val();
+            var treatment = $('#treatment').val();
+            var therapist = '';
+
+            if (document.getElementById('male').checked) {
+                 therapist = document.getElementById('male').value;
             }
+
+            if (document.getElementById('female').checked) {
+                 therapist = document.getElementById('female').value;
+            }
+
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo site_url('reserve/save')?>",
+                dataType : "JSON",
+                data : {schedule_date:schedule_date, time:time, name:name, mobile_phone:mobile_phone, treatment:treatment, therapist:therapist},
+                success: function(data){
+                    console.log(data);
+                    if(data == true){
+                        // cekData();
+                        sweetAlert("Successfully!", "Data saved successfully", "success");
+                    }
+
+                }
+            });
+                return false;
         });
+
+        function sukses(){
+            $('#suksesModal').modal();
+        }
+            
     });
 </script>
