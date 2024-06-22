@@ -514,7 +514,8 @@
 /*********************************/
 
 .secsix {
-  background: #ffeaa7;
+  background: linear-gradient(#6cbc99, #2e644d);
+  /* background: #ffeaa7; */
 }
 
 .secsix .container .row .title {
@@ -529,7 +530,7 @@
   line-height: 124%;
   letter-spacing: 2px;
   text-align: center;
-  color: #6cbc99;
+  color: #f3f3f3;
 }
 
 .secsix .container .row .title h4 {
@@ -546,7 +547,7 @@
 .secsix .container .row .title hr {
   width: 150px;
   height: 5px;
-  background: #6cbc99;
+  background: #f3f3f3;
 }
 
 .secsix .container .col-sm-8 {
@@ -641,7 +642,9 @@
 /*********************************/
 
 .seceight {
-  background: #f3f3f3;
+  background: url('../img/testimoni_bg.jpg') no-repeat;
+  height: auto;
+  /* background: #f3f3f3; */
   margin-top: 100px;
 }
 
@@ -668,7 +671,8 @@
   line-height: 124%;
   letter-spacing: 2px;
   text-align: center;
-  color: #0F0F0F;
+  color: #f3f3f3;
+  /* color: #0F0F0F; */
 }
 
 .seceight .container .row .title hr {
@@ -697,7 +701,8 @@
   line-height: 124%;
   letter-spacing: 2px;
   text-align: center;
-  color: #0F0F0F;
+  /* color: #0F0F0F; */
+  color: #f3f3f3;
 }
 
 .seceight .container .row .carousel .carousel-inner .carousel-item .row .col-lg-8 p {
@@ -708,7 +713,8 @@
   line-height: 124%;
   letter-spacing: 1px;
   text-align: center;
-  color: #0F0F0F;
+  /* color: #0F0F0F; */
+  color: #f3f3f3;
 }
 
 /**********************************/
@@ -1290,7 +1296,7 @@
     line-height: 124%;
     letter-spacing: 2px;
     text-align: center;
-    color: #0F0F0F;
+    color: #f3f3f3;
   }
 
   .seceight .container .row .carousel .carousel-inner .carousel-item img { 
@@ -1746,7 +1752,7 @@
     line-height: 124%;
     letter-spacing: 2px;
     text-align: center;
-    color: #0F0F0F;
+    color: #f3f3f3;
   }
 
   .seceight .container .row .carousel .carousel-inner .carousel-item img { 
@@ -2210,7 +2216,7 @@
       line-height: 124%;
       letter-spacing: 2px;
       text-align: center;
-      color: #0F0F0F;
+      color: #f3f3f3;
     }
   
     .seceight .container .row .carousel .carousel-inner .carousel-item img { 

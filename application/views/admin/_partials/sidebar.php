@@ -38,6 +38,7 @@
             <a class="collapse-item" href="<?php echo site_url('admin/pages') ?>">Pages</a>
             <a class="collapse-item" href="<?php echo site_url('admin/service') ?>">Service</a>
             <a class="collapse-item" href="<?php echo site_url('admin/gallery') ?>">Gallery</a>
+            <a class="collapse-item" href="<?php echo site_url('admin/testimoni') ?>">Testimoni</a>
             <a class="collapse-item" href="<?php echo site_url('admin/promo') ?>">Promo</a>
             <a class="collapse-item" href="<?php echo site_url('admin/contact') ?>">Contact</a>
         </div>

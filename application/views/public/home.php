@@ -18,7 +18,7 @@
         </div>
         <div class="row" style="float:right;">
             <div class="whatsapp">
-                <a href="https://wa.me/6281235038508?text=Hi+!+Saya+ingin+bertanya+mengenai+produk+Mantiko+Group+yang+diinformasikan+di+Website?">
+                <a href="https://wa.me/6281320002094?text=Hi+!+Saya+ingin+bertanya+mengenai+service+Kakoto+Massage+yang+diinformasikan+di+Website?">
                     <img src="<?php echo base_url('assets/img/Asset 26.png') ?>" class="img-responsive" />
                 </a>
             </div>
@@ -125,7 +125,15 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="treatment">Treatment :</label>
-                                    <input type="text" class="form-control" name="treatment" id="treatment">
+                                    <select class="form-control" name="treatment" id="treatment">
+                                        <option value="BEKAM">BEKAM</option>
+                                        <option value="KOP">KOP / KERIK</option>
+                                        <option value="LULUR">LULUR</option>
+                                        <option value="FBM">FULL BODY MASSAGE</option>
+                                        <option value="REFLEKSI">REFLEKSI</option>
+                                        <option value="THAI">THAI MASSAGE</option>
+                                    </select>
+                                    <!-- <input type="text" class="form-control" name="treatment" id="treatment"> -->
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -189,26 +197,28 @@
             <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
                 <div class="carousel-inner">
                 
-                    <?php
-                        foreach ($testimoni as $testimoni): ?>
-                            <div class="carousel-item active">
-                                <img class="rounded-circle shadow-1-strong mb-4" src="<?php echo base_url('upload/homepage/'.$testimoni->image) ?>">
-                                <div class="row d-flex justify-content-center">
+                    <?php 
+                        foreach ($testimoni as $key => $value) {
+                            $active = ($key == 0) ? 'active' : '';
+                            echo '<div class="carousel-item ' . $active . '">
+                                  <img class="rounded-circle shadow-1-strong mb-4" src="' . base_url().'upload/images/' . $value->image . '">
+                                  <div class="row d-flex justify-content-center">
                                     <div class="col-lg-8">
-                                        <h5 class="mb-3"><?php echo $testimoni->title ?></h5>
-                                        <p class="text-muted"><?php echo $testimoni->description ?></p>
+                                        <h5 class="mb-3">' . $value->testi_name . '</h5>
+                                        <p class="text-muted">' . $value->description . '</p>
                                     </div>
                                 </div>
-                            </div>
-                    <?php endforeach; ?>    
+                            </div>';
+                        }
+                    ?> 
 
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> 
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> 
+                    <span class="carousel-control-prev-icon" aria-hidden="true" style="color:#6cbc99;"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true" style="color:#6cbc99;"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>
@@ -228,15 +238,15 @@
         <div class="row">
             <div class="col-sm-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
                 <div class="maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.8419656233075!2d106.82804046601122!3d-6.16613446933582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5cd868e1a25%3A0x19ba387a159483fb!2sMantiko%20Travel!5e0!3m2!1sid!2sid!4v1682043794207!5m2!1sid!2sid" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.740854074006!2d106.79152027498998!3d-6.165448693821804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f75389e33ad9%3A0x7ebf7bcc48d871fd!2sKAKOTO%20REFLEKSI%20%26%20MASSAGE%20Cab.%20Grogol!5e0!3m2!1sen!2sid!4v1705512529977!5m2!1sen!2sid" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="col-sm-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="400">
                 <div class="contact">
                     <ul>
-                        <li><img src="<?php echo base_url('assets/img/place.png')?>">Jl. Ir. H. Juanda 2, gg.kingkit 2 No.2 RT 012 / 004, Kel. kebon kelapa kec. Gambir - Jakarta Pusat</li>
-                        <li><img src="<?php echo base_url('assets/img/whatsapp.png')?>">0812-3503-8508</li>
-                        <li><img src="<?php echo base_url('assets/img/instagram.png')?>">mantikotravel.mice</li> 
+                        <li><img src="<?php echo base_url('assets/img/place.png')?>">Jl. Dr. Muwardi III, No.45B, RT02/RW03, Grogol Petamburan, Jakarta Barat</li>
+                        <li><img src="<?php echo base_url('assets/img/whatsapp.png')?>">0813-2000-2094</li>
+                        <li><img src="<?php echo base_url('assets/img/instagram.png')?>">kakotorefleksi.jkt</li> 
                     </ul>
                 </div>
             </div>
@@ -298,7 +308,7 @@
                     console.log(data);
                     if(data == true){
                         // cekData();
-                        sweetAlert("Successfully!", "Data saved successfully", "success");
+                        sweetAlert("Successfully!", "You have successfull to submit your reservation, Our Team will contact you soon", "success");
                     }
 
                 }

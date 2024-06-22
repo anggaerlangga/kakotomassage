@@ -15,8 +15,8 @@ class Home extends CI_Controller {
 		 $data["about"] = $this->pages_model->getAboutBySubPage();
 		 $this->load->model("service_model");
 		 $data["service"] = $this->service_model->getAll();
-		 $this->load->model("pages_model");
-		 $data["testimoni"] = $this->pages_model->getTestimoniBySubPage();
+		 $this->load->model("testimoni_model");
+		 $data["testimoni"] = $this->testimoni_model->getAll();
 		 $this->load->model("promo_model");
 		 $data["promo"] = $this->promo_model->getAllPromo();
 		 $this->load->model("gallery_model");
